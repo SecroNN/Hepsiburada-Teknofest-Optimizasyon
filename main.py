@@ -170,7 +170,7 @@ df_forecast = df_forecast[['Tarih', 'Çıkış TM', 'Varış TM', 'Tahmin Edilen
 
 print("💾 4. Excel Dosyaları Şık Tasarımla (.xlsx formatında) Oluşturuluyor...")
 
-# Profesyonel Excel Tasarım Fonksiyonu
+# Excel Tasarım Fonksiyonu
 def format_excel_and_save(df, filename, sheet_name="Sayfa1"):
     with pd.ExcelWriter(filename, engine='openpyxl') as writer:
         df.to_excel(writer, index=False, sheet_name=sheet_name)
@@ -187,7 +187,7 @@ def format_excel_and_save(df, filename, sheet_name="Sayfa1"):
             header_cell.font = header_font
             header_cell.alignment = Alignment(horizontal='center', vertical='center')
             
-            # Sütun Genişliklerini Otomatik Ayarlama (Ferahlık payı eklendi)
+            # Sütun Genişliklerini Otomatik Ayarlama 
             max_len = len(str(col_name))
             for row_val in df[col_name]:
                 if pd.notna(row_val):
